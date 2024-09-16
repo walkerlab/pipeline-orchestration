@@ -107,12 +107,6 @@ def test_combination():
                             "mount_mode": "ro",
                         },
                     },
-                    dir_mounts={
-                        "/pipeline1/map1": {
-                            "mount_dest": "/ouput",
-                            "mount_mode": "rw",
-                        }
-                    },
                 )
             ],
             "store": """
@@ -129,14 +123,6 @@ def test_combination():
                     c:
                       person-0.png:
                       person-1.png:
-              map1:
-                a:
-                  b:
-                    c:
-                      paint-0.png:
-                      paint-1.png:
-                      person-0.png:
-                      person-1.png:
             """,
         },
         1: {
@@ -146,11 +132,11 @@ def test_combination():
                     memory_limit="1GiB",
                     cpu_limit=1,
                     file_mounts={
-                        "/pipeline1/map1/a/b/c/paint-0.png": {
+                        "/pipeline1/input1/a/b/c/paint-0.png": {
                             "mount_dest": "/main/painting.png",
                             "mount_mode": "ro",
                         },
-                        "/pipeline1/map1/a/b/c/person-0.png": {
+                        "/pipeline1/input2/a/b/c/person-0.png": {
                             "mount_dest": "/main/photo.png",
                             "mount_mode": "ro",
                         },
@@ -167,11 +153,11 @@ def test_combination():
                     memory_limit="1GiB",
                     cpu_limit=1,
                     file_mounts={
-                        "/pipeline1/map1/a/b/c/paint-0.png": {
+                        "/pipeline1/input1/a/b/c/paint-0.png": {
                             "mount_dest": "/main/painting.png",
                             "mount_mode": "ro",
                         },
-                        "/pipeline1/map1/a/b/c/person-1.png": {
+                        "/pipeline1/input2/a/b/c/person-1.png": {
                             "mount_dest": "/main/photo.png",
                             "mount_mode": "ro",
                         },
@@ -188,11 +174,11 @@ def test_combination():
                     memory_limit="1GiB",
                     cpu_limit=1,
                     file_mounts={
-                        "/pipeline1/map1/a/b/c/paint-1.png": {
+                        "/pipeline1/input1/a/b/c/paint-1.png": {
                             "mount_dest": "/main/painting.png",
                             "mount_mode": "ro",
                         },
-                        "/pipeline1/map1/a/b/c/person-0.png": {
+                        "/pipeline1/input2/a/b/c/person-0.png": {
                             "mount_dest": "/main/photo.png",
                             "mount_mode": "ro",
                         },
@@ -209,11 +195,11 @@ def test_combination():
                     memory_limit="1GiB",
                     cpu_limit=1,
                     file_mounts={
-                        "/pipeline1/map1/a/b/c/paint-1.png": {
+                        "/pipeline1/input1/a/b/c/paint-1.png": {
                             "mount_dest": "/main/painting.png",
                             "mount_mode": "ro",
                         },
-                        "/pipeline1/map1/a/b/c/person-1.png": {
+                        "/pipeline1/input2/a/b/c/person-1.png": {
                             "mount_dest": "/main/photo.png",
                             "mount_mode": "ro",
                         },
@@ -238,14 +224,6 @@ def test_combination():
                 a:
                   b:
                     c:
-                      person-0.png:
-                      person-1.png:
-              map1:
-                a:
-                  b:
-                    c:
-                      paint-0.png:
-                      paint-1.png:
                       person-0.png:
                       person-1.png:
               pod1:
