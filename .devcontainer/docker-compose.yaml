@@ -1,0 +1,13 @@
+version: "3"
+services:
+  app:
+    build:
+      context: ..
+      dockerfile: ./.devcontainer/Dockerfile
+    environment:
+      - DISPLAY  # open guis using xserver
+    volumes:
+      - ..:/workspaces/orcinus-test-cases:cached
+      - /tmp/.X11-unix:/tmp/.X11-unix:rw  # open guis using xserver
+volumes:
+  docker_data:

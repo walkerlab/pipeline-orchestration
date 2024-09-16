@@ -1,0 +1,41 @@
+{
+    "editor.formatOnPaste": false,
+    "editor.formatOnSave": true,
+    "notebook.formatOnSave.enabled": true,
+    "editor.rulers": [
+        88
+    ],
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.black-formatter"
+    },
+    "[markdown]": {
+        "editor.defaultFormatter": null
+    },
+    "files.autoSave": "off",
+    "jupyter.kernels.excludePythonEnvironments": [
+        "/bin/python3",
+        "/usr/bin/python3",
+        "/usr/local/bin/python"
+    ],
+    "python.defaultInterpreterPath": "/usr/local/bin/python3",
+    "launch": {
+        "version": "0.2.0",
+        "configurations": [
+            {
+                "name": "Python: Current File",
+                "type": "debugpy",
+                "request": "launch",
+                "console": "integratedTerminal",
+                "justMyCode": false,
+                "cwd": "${fileDirname}",
+                "program": "${file}"
+            }
+        ]
+    },
+    "python.testing.pytestArgs": [
+        "tests_pipeline_use_cases"
+    ],
+    "python.testing.unittestEnabled": false,
+    "python.testing.pytestEnabled": true,
+    "python.testing.autoTestDiscoverOnSaveEnabled": false
+}
